@@ -1,0 +1,29 @@
+{
+  "name": "typer",
+  "version": "1.0.0",
+  "description": "typing with the masters",
+  "author": {
+    "name": "Andre Bluehs",
+    "email": "hello@andrebluehs.net",
+    "url": "andrebluehs.net"
+  },
+  "dependencies": {
+    "alt": "^0.18.1",
+    "alt-utils": "^1.0.0",
+    "classnames": "^2.2.3",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-webpack": "^1.0.11",
+    "line-by-line": "^0.1.4",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
