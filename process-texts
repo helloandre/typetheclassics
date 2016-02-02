@@ -1,0 +1,5 @@
+#! /bin/bash
+
+./process-text.js "Pride And Prejudice" "^Chapter \d+$"
+./process-text.js "Alice's Adventures In Wonderland" "^CHAPTER [IVXCM]+\."
+./process-text.js "The Adventures Of Sherlock Holmes" "(^[IVXCM]+\.$)|(^ADVENTURE [IVXCM]+\.)|(^[IVXCM]+\.)"
