@@ -1,18 +1,41 @@
 import alt from '../alt';
 import EditorActions from '../actions/editor';
+import TextActions from '../actions/text';
+import TextSource from '../sources/text';
 import renderer from '../wysiwyg/renderer';
 
 const LINE_HEIGHT = 55;
 
 class EditorStore {
     constructor() {
-        this.bindActions(EditorActions);
-
         this.state = {
             html: '',
             active: false,
-            top: 0
+            top: 0,
+            text: '',
+            block: 0,
+            textContent: [],
         };
+
+        this.bindActions(EditorActions);
+        this.bindActions(TextActions);
+        
+        this.registerAsync(TextSource);
+    }
+
+    initText() {
+        this.getInstance().determineText();
+    }
+
+    determineTextDone(data) {
+        this.state.text = data.text;
+        this.state.block = data.block;
+
+        this.getInstance().fetchText();
+    }
+
+    fetchTextDone(text) {
+        this.state.textContent = text.data.text.split('\n');
     }
 
     keyDown(e) {
