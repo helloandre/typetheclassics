@@ -55,7 +55,7 @@ class Renderer {
      *
      * we only want to use this event if it meets certain requirements
      */
-    keyUp(current, e) {
+    keyDown(current, e) {
         if (isBackspace(e.keyCode)) {
             return removeLast(current);
         }
@@ -75,7 +75,6 @@ class Renderer {
         if (ignore(e.which)) {
             return current;
         }
-        console.log('key', e.key);
 
         return current + e.key;
     }

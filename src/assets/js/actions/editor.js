@@ -1,3 +1,3 @@
 import alt from '../alt';
 
-export default alt.generateActions('keyUp', 'keyPress', 'focus', 'blur');
+export default alt.generateActions('keyDown', 'keyPress', 'focus', 'blur');

@@ -12,8 +12,8 @@ class EditorStore {
         };
     }
 
-    keyUp(e) {
-        this.state.html = renderer.keyUp(this.state.html, e);
+    keyDown(e) {
+        this.state.html = renderer.keyDown(this.state.html, e);
     }
 
     keyPress(e) {

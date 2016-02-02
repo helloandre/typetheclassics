@@ -14,8 +14,8 @@ class Editor extends Component {
         return EditorStore.getState();
     }
 
-    onKeyUp(e) {
-        EditorActions.keyUp(e);
+    onKeyDown(e) {
+        EditorActions.keyDown(e);
     }
 
     onKeyPress(e) {
@@ -39,7 +39,7 @@ class Editor extends Component {
                 <input 
                     id="editor-input"
                     onKeyPress={this.onKeyPress}
-                    onKeyUp={this.onKeyUp}
+                    onKeyDown={this.onKeyDown}
                     onBlur={this.onBlur}
                     onFocus={this.onFocus}
                 />
