@@ -38,10 +38,15 @@ const removeLast = (current) => {
 
     // if the last character was an enter, we need to remove the markup for that
     if (last == ENTER_LAST_CHAR) {
-        return current.substring(0, length - ENTER_HTML.length);
+        return {
+            removedEnter: true,
+            html: current.substring(0, length - ENTER_HTML.length)
+        }
     }
 
-    return current.substring(0, length - 1);
+    return {
+        html: current.substring(0, length - 1)
+    }
 }
 
 /**
@@ -61,10 +66,15 @@ class Renderer {
         }
 
         if (isEnter(e.keyCode)) {
-            return current + ENTER_HTML;
+            return {
+                addedEnter: true,
+                html: current + ENTER_HTML
+            };
         }
 
-        return current;
+        return {
+            html: current
+        };
     }
 
     /**

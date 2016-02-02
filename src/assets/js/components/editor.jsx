@@ -33,9 +33,15 @@ class Editor extends Component {
     render() {
         // only add the cursor on render
         const html = this.props.html + renderer.cursor();
+        const style = {
+            top: this.props.top
+        };
 
         return (
-            <div id="editor" className={Classnames({ active: this.props.active })}>
+            <div
+                id="editor"
+                className={Classnames({ active: this.props.active })}
+            >
                 <input 
                     id="editor-input"
                     onKeyPress={this.onKeyPress}
@@ -45,7 +51,9 @@ class Editor extends Component {
                 />
                 <div 
                     id="editor-display"
-                    dangerouslySetInnerHTML={{__html: html}}>
+                    dangerouslySetInnerHTML={{__html: html}}
+                    style={ style }
+                >
                 </div>
             </div>
         );
