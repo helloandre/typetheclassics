@@ -10,19 +10,15 @@ const TextSource = {
 
                 if (existing) {
                     return axios.get('/text/' + existing.text + '/' + existing.block).then((data) => {
-                        return new Promise((resolve, reject) => {
-                            resolve({
-                                text: existing.text,
-                                block: existing.block,
-                                offset: existing.offset,
-                                content: data.data.content
-                            });
-                        });
+                        existing.content = data.data.content;
+                        return existing;
                     });
                 }
             }
 
-            return axios.get('/randomtext');
+            return axios.get('/randomtext').then((data) => {
+                return data.data
+            });
         },
         success: TextActions.fetchTextDone,
         error: TextActions.fetchTextDone

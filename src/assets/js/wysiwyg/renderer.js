@@ -107,8 +107,6 @@ class Renderer {
             html += content[i] + ENTER_HTML;
         }
 
-        console.log('html', html);
-
         return html;
     }
 }
