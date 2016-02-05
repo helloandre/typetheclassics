@@ -92,6 +92,25 @@ class Renderer {
     cursor() {
         return CURSOR_HTML;
     }
+
+    /**
+     * take in the content that we were to have "typed" already
+     * and return the rendered content as if we typed it for the amount of offsets
+     *
+     * @param Array content
+     * @param integer offset
+     * @return string some html
+     */
+    prerender(content, offset) {
+        let html = '';
+        for (let i = 0; i < offset; i++) {
+            html += content[i] + ENTER_HTML;
+        }
+
+        console.log('html', html);
+
+        return html;
+    }
 }
 
 export default new Renderer;

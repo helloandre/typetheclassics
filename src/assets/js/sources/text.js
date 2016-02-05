@@ -1,20 +1,28 @@
 import axios from 'axios';
 import TextActions from '../actions/text';
+import ls from '../lib/localstorage';
 
 const TextSource = {
-    determineText: {
-        remote(state) {
-            // todo fetch and decicde based on /texts.json
-            return new Promise((resolve, reject) => {
-                resolve({text: 'the-adventures-of-sherlock-holmes', block: 2});
-            });
-        },
-        success: TextActions.determineTextDone,
-        error: TextActions.determineTextDone
-    },
     fetchText: {
         remote(state) {
-            return axios.get('/text/' + state.text + '/' + state.block);
+            if (!state.reset) {
+                const existing = ls.get();
+
+                if (existing) {
+                    return axios.get('/text/' + existing.text + '/' + existing.block).then((data) => {
+                        return new Promise((resolve, reject) => {
+                            resolve({
+                                text: existing.text,
+                                block: existing.block,
+                                offset: existing.offset,
+                                content: data.data.content
+                            });
+                        });
+                    });
+                }
+            }
+
+            return axios.get('/randomtext');
         },
         success: TextActions.fetchTextDone,
         error: TextActions.fetchTextDone
