@@ -1,18 +1,13 @@
-# Slim Framework 3 Skeleton Application
+# Type The Classics
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+A simple and distraction-free way to type some classic works.
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+Aee https://typetheclassics.com/about for more information.
 
-## Install the Application
+# Contributing
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+To get a local version working, download some texts from [Project Gutenburg](http://www.gutenberg.org/wiki/Main_Page) (specifically http://www.gutenberg.org/files/28885/28885-8.txt to get started).
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+Then run grunt to get all the assets generated: `grunt`
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
-
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
-
-That's it! Now go build something cool.
+Then spin up a local server to view the content: `php -S 0.0.0.0:8080 -t public public/index.php`
