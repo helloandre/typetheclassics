@@ -25,7 +25,7 @@ $app->get('/randomtext', function ($request, $response, $args) {
     $keys = array_keys($all_texts);
     $text_key = $keys[array_rand($keys)];
     $text = $all_texts[$text_key];
-    $block = rand(0, $text['blocks'] - 1);
+    $block = rand(1, $text['blocks'] - 1);
     $content = file_get_contents(build_filename($text_key, $block));
 
     return $response->withHeader('Content-type', 'application/json')->write(json_encode(array('text' => $text_key, 'block' => $block, 'offset' => 0, 'content' => $content)));
