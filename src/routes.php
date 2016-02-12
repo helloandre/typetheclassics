@@ -6,12 +6,14 @@ function build_filename($text, $block) {
 }
 
 $app->get('/', function ($request, $response, $args) {
-    // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
+$app->get('/about', function ($request, $response, $args) {
+    return $this->renderer->render($response, 'about.phtml', $args);
+});
+
 $app->get('/texts', function ($request, $response, $args) {
-    // Render index view
     return $response->withHeader('Content-type', 'application/json')->write(file_get_contents('./texts/texts.json'));
 });
 

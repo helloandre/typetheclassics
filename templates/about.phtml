@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Type The Classics</title>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                font-family: 'Droid Serif', sans-serif;
+                color: #333;
+                font-size: 18px;
+            }
+            #nav {
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+            #content {
+                padding: 0 10%;
+            }
+            #title,
+            #about,
+            #title:visited,
+            #about:visited {
+                color: #ddd;
+            }
+
+            #title {
+                display: inline-block;
+                font-size: 20px;
+                margin: 0 20px;
+                text-decoration: none;
+            }
+            section {
+                font-size: 1.2em;
+                padding: 50px 0;
+            }
+            h1 {
+                margin: 50px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav" class="nav">
+            <a id="title" href="/">Type The Classics</a>
+            <a id="about" href="/about">About</a>
+        </div>
+
+        <div id="content">
+            <h1>What Is This?</h1>
+            <section>
+                <p>
+                    Type The Classics is intended to be a distraction-free way to type out some classic texts for inspiration or disctraction (or if you just want to seem busy at work).
+                </p>
+            </section>
+
+            <h1>The Classics</h1>
+            <section>
+                <p>
+                    The classics available for typing are public domain texts take from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a>.
+                </p>
+
+                <p>
+                    At any point you may be typing a chapter from one of the following:
+                </p>
+
+                <ul>
+                    <li>Alice's Adventures in Wonderland</li>
+                    <li>The Adventures of Sherlock Holmes</li>
+                    <li>Pride and Prejudice</li>
+                </ul>
+            </section>
+
+            <h1>Why? pt 1</h1>
+            <section>
+                <p>
+                    First and foremost I found the idea at <a href="http://grahamwahlberg.com/business-ideas/">http://grahamwahlberg.com/business-ideas/</a>. That inspired me to put this project into motion.
+                </p>
+            </section>
+            
+            <h1>Why? pt 2</h1>
+            <section>
+                <p>
+                    There have been an incredible amount of changes in the open source world of front end development. We use some of them in my day job, but not the very bleeding edge stuff. I wanted a playground to fiddle around with these ideas (outside of a boring TODO app).
+                </p>
+
+                <p>
+                    Technologies used:
+                </p>
+
+                <ul>
+                    <li><a href="https://webpack.github.io/">Webpack</a></li>
+                    <li><a href="https://babeljs.io/">Babel</a></li>
+                    <li><a href="http://gruntjs.com/">Grunt</a></li>
+                    <li><a href="https://facebook.github.io/react/">React</a></li>
+                    <li><a href="http://alt.js.org/">Alt</a></li>
+                </ul>
+            </section>
+
+            <h1>Github</h1>
+            <section>
+                <p>
+                    The entire code for this project is available to check out at <a href="https://github.com/helloandre/typetheclassics">https://github.com/helloandre/typetheclassics</a>
+                </p>
+
+                <p>
+                    Feel free to poke around, submit issues and/or pull requests. Or just comment on how badly I'm using X technology.
+                </p>
+
+                <p>
+                    The texts used at https://typetheclassics.com are not included in the repository simply because I couldn't be bothered to figure out if Project Gutenburg would allow me to or not. For you to download them, simply download the full.txt version of a particular text (see <code>process-texts</code>) and run the script to generate the blocks used to type.
+                </p>
+            </section>
+        </div>
+    </body>
+</html>
