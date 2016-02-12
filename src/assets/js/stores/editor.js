@@ -17,7 +17,7 @@ class EditorStore {
             text: '',
             block: 0,
             textContent: [],
-            reset: false
+            refresh: false
         };
 
         this.bindActions(EditorActions);
@@ -30,21 +30,34 @@ class EditorStore {
         this.getInstance().fetchText();
     }
 
+    refreshText() {
+        this.state.refresh = true;
+        this.getInstance().fetchText();
+    }
+
     fetchTextDone(data) {
         this.state.text = data.text;
         this.state.block = data.block;
         this.state.offset = data.offset;
         this.state.textContent = data.content.split('\n');
 
-        ls.set(this.state.text, this.state.block, this.state.offset);
-
-        this.setTop();
+        if (this.state.refresh) {
+            this.state.offset = 0;
+        }
 
         // compensate for current offset by setting the text from textContent
         // to be the html that we already "typed"
         if (this.state.offset > 0) {
             this.state.html = renderer.prerender(this.state.textContent, this.state.offset)
+        } else {
+            this.state.html = '';
         }
+
+        ls.set(this.state.text, this.state.block, this.state.offset);
+
+        this.setTop();
+
+        this.state.refresh = false;
     }
 
     keyDown(e) {

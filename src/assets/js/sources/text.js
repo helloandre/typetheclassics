@@ -5,7 +5,7 @@ import ls from '../lib/localstorage';
 const TextSource = {
     fetchText: {
         remote(state) {
-            if (!state.reset) {
+            if (!state.refresh) {
                 const existing = ls.get();
 
                 if (existing) {

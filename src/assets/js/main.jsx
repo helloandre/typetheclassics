@@ -22,6 +22,9 @@ const focus = (e) => {
 }
 
 document.body.addEventListener('click', focus);
+document.querySelector('#refresh').addEventListener('click', () => {
+    TextActions.refreshText();
+    focus();
+});
 
-focus()
-
+focus();

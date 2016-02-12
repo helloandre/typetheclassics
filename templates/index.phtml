@@ -20,8 +20,26 @@
             #nav {
                 width: 100%;
                 height: 50px;
+                line-height: 50px;
                 border-bottom: 1px solid #ccc;
                 margin-bottom: 10px;
+                text-align: left;
+            }
+            #title,
+            #about {
+                color: #ddd;
+            }
+            #title {
+                display: inline-block;
+                font-size: 20px;
+                margin: 0 20px;
+            }
+            #refresh {
+                position: absolute;
+                right: 3%;
+                top: 3px;
+                color: #ddd;
+                text-decoration: none;
             }
             #editor-input {
                 opacity: 0;
@@ -64,7 +82,9 @@
     </head>
     <body>
         <div id="nav" class="nav">
-
+            <div id="title">Type The Classics</div>
+            <a id="about" href="/about">About</a>
+            <a id="refresh" href="#">Refresh Content</a>
         </div>
         <div id="text-container"></div>
         <div id="editor-container"></div>

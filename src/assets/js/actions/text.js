@@ -2,7 +2,7 @@ import alt from '../alt';
 
 class TextActions {
     constructor() {
-        this.generateActions('initText', 'fetchTextDone', 'determineTextDone');
+        this.generateActions('initText', 'refreshText', 'fetchTextDone', 'determineTextDone');
     }
 }
 
